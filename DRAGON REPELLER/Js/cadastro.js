@@ -9,7 +9,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
       localStorage.setItem('playerName', playerName);
       localStorage.setItem('playerClass', playerClass);
       // Redireciona para o index.html
-      window.location.href = './HTML/index.html';
+      window.location.href = 'index.html';
     }
   });
   
