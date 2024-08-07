@@ -17,7 +17,6 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-
 // Música de fundo
 const backgroundMusic = document.getElementById("backgroundMusic");
 const volumeControl = document.getElementById("volume");
@@ -29,19 +28,13 @@ document.getElementById("volume").addEventListener("input", function () {
 });
 
 // Inicialização do jogo
-document.addEventListener('DOMContentLoaded', function() {
-  const playerName = localStorage.getItem('playerName') || 'Desconhecido';
-  const playerClass = localStorage.getItem('playerClass') || 'Nenhuma classe';
-  
-  document.getElementById('playerNameDisplay').innerText = playerName;
-  document.getElementById('playerClassDisplay').innerText = playerClass;
+document.addEventListener("DOMContentLoaded", function () {
+  const playerName = localStorage.getItem("playerName") || "Desconhecido";
+  const playerClass = localStorage.getItem("playerClass") || "Nenhuma classe";
 
-  // O resto do código do jogo continua aqui...
-
-  // Inicialize o jogo com a cidade
-  goTown(); 
+  document.getElementById("playerNameDisplay").innerText = playerName;
+  document.getElementById("playerClassDisplay").innerText = playerClass;
 });
-
 
 const weapons = [
   {
@@ -49,15 +42,15 @@ const weapons = [
     power: 7,
   },
   {
-    name: "uma Adaga Especial ",
+    name: " uma Adaga Especial ",
     power: 35,
   },
   {
-    name: "um Machado Lendário ",
+    name: " um Machado Lendário ",
     power: 60,
   },
   {
-    name: "uma Espada Divina",
+    name: " uma Espada Divina",
     power: 120,
   },
 ];
@@ -167,6 +160,14 @@ function update(location) {
   }
 }
 
+function updateStats() {
+  xpText.innerText = xp;
+  healthText.innerText = health;
+  goldText.innerText = gold;
+  weaponName.innerText = weapons[currentWeaponIndex].name;
+  weaponPower.innerText = weapons[currentWeaponIndex].power;
+}
+
 function goTown() {
   update(locations[0]);
 }
@@ -185,6 +186,7 @@ function buyHealth() {
     health += 10;
     goldText.innerText = gold;
     healthText.innerText = health;
+    updateStats();
   } else {
     text.innerHTML = `<p>Você não tem ouro suficiente para comprar vida!</p>`;
   }
@@ -200,12 +202,14 @@ function buyWeapon() {
       text.innerHTML = `<p>Você agora tem ${newWeapon} !</p>`;
       inventory.push(newWeapon);
       text.innerHTML += `<p>No seu inventário você tem: ${inventory}.</p>`;
+      updateStats();
     } else {
       text.innerHTML = `<p>Você não tem ouro suficiente para comprar uma arma!</p>`;
     }
   } else {
     text.innerHTML = `<p>Você já tem a arma mais poderosa!</p>`;
-    button2.innerText = "Vender as outras armas por 15 ouro cada? Os poderes delas não são somados.";
+    button2.innerText =
+      "Vender as outras armas por 15 ouro cada? Os poderes delas não são somados.";
     button2.onclick = sellWeapon;
   }
 }
@@ -217,6 +221,7 @@ function sellWeapon() {
     let currentWeapon = inventory.shift();
     text.innerHTML = `<p>Você vendeu ${currentWeapon}.</p>`;
     text.innerHTML += `<p>No seu inventário você tem: ${inventory}.</p>`;
+    updateStats();
   } else {
     text.innerHTML = `<p>Você não pode vender sua única arma!</p>`;
   }
@@ -300,6 +305,7 @@ function defeatMonster() {
   goldText.innerText = gold;
   xpText.innerText = xp;
   update(locations[4]);
+  updateStats();
 }
 
 function restart() {

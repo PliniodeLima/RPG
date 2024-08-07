@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 
+h1{
+  text-align: center;
+}
+
 #volumeControl {
   margin-top: 10px;
   color: #ffffff;
@@ -221,6 +225,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: calc(100vh - 160px); /* Ajusta a altura do contêiner do jogo */
   margin-top: 120px; /* Ajuste conforme a altura do #playerInfo */
 
@@ -331,7 +336,7 @@ button:focus {
   background-color: rgba(10, 10, 35, 0.8); /* Cor de fundo similar ao header */
   color: #feac32; /* Cor do texto */
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   font-size: 0.9rem; /* Tamanho da fonte do rodapé */
   z-index: 1; /* Garante que o rodapé fique acima de outros elementos */
 }
