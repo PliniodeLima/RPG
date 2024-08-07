@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Repelente de Dragão</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Repelente de Dragão</h1>
+    </header>
+    <div id="background"></div>
+
+    <div id="registrationContainer">
+      <form id="registrationForm">
+        <label for="playerName">Nome do Cavaleiro:</label>
+        <input type="text" id="playerName" name="playerName" required />
+        
+        <label for="playerClass">Escolha sua Classe:</label>
+        <select id="playerClass" name="playerClass" required>
+          <option value="" disabled selected>Selecione uma classe</option>
+          <option value="warrior">Guerreiro</option>
+          <option value="mage">Mago</option>
+          <option value="archer">Arqueiro</option>
+        </select>
+        
+        <button type="submit">Começar Jogo</button>
+      </form>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2024 Aperte F1. Todos os direitos reservados.</p>
+      <p>Desenvolvido por Aperte F1</p>
+    </footer>
+    <script src="./Js/cadastro.js"></script>
+  </body>
+</html>
