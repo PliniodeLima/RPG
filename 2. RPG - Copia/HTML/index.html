@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG - REPELENTE DE DRAGÃO - BY APERTEF1</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Repelente de Dragão</h1>
+    </header>
+    <div id="background"></div>
+    <!-- Seção de informações do jogador -->
+    <div id="playerInfo">
+      <p id="playerNameDisplay">
+        Nome do Cavaleiro: <span id="playerName"></span>
+      </p>
+      <p id="playerClassDisplay">Classe: <span id="playerClass"></span></p>
+    </div>
+    <div id="gameContainer">
+      <div id="game">
+        <div id="stats">
+          <span class="stat"
+            >XP: <strong><span id="xpText">0</span></strong></span
+          >
+          <span class="stat"
+            >Vida: <strong><span id="healthText">100</span></strong></span
+          >
+          <span class="stat"
+            >Ouro: <strong><span id="goldText">50</span></strong></span
+          >
+        </div>
+        <div id="controls">
+          <button id="button1">Ir para a Loja</button>
+          <button id="button2">Ir para a caverna</button>
+          <button id="button3">Lutar contra o dragão</button>
+        </div>
+        <div id="monsterStats">
+          <span class="stat"
+            >Nome do Monstro: <strong><span id="monsterName"></span></strong
+          ></span>
+          <span class="stat"
+            >Vida: <strong><span id="monsterHealth"></span></strong
+          ></span>
+        </div>
+        <div id="text">
+          <h1>Bem-vindo ao Repelente de Dragão!</h1>
+          <div id="narrative">
+            <p>
+              Era uma vez, em um reino distante, onde a paz reinava, até que um
+              poderoso dragão surgiu e aterrorizou a cidade. Como o corajoso
+              herói desta história, sua missão é derrotar o dragão e restaurar a
+              tranquilidade ao reino.
+            </p>
+            <p>
+              Você está na praça da cidade, onde pode ouvir os sussurros dos
+              habitantes aterrorizados. Suas opções são: visitar a loja para se
+              preparar, explorar a caverna em busca de monstros menores para
+              ganhar experiência, ou enfrentar diretamente o dragão.
+            </p>
+          </div>
+        </div>
+        <audio id="backgroundMusic" loop>
+          <source src="../Sounds/background.mp3" type="audio/mp3" />
+        </audio>
+        <div id="volumeControl">
+          <label for="volume">Volume:</label>
+          <input
+            type="range"
+            id="volume"
+            name="volume"
+            min="0"
+            max="1"
+            step="0.05"
+            value="0.5"
+          />
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <p>&copy; 2024 Aperte F1. Todos os direitos reservados.</p>
+      <p>Desenvolvido por Aperte F1</p>
+    </footer>
+    <script src="../Js/script.js"></script>
+  </body>
+</html>
