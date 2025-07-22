@@ -17,7 +17,7 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-// Música de fundo
+//  Música de fundo
 const backgroundMusic = document.getElementById("backgroundMusic");
 const volumeControl = document.getElementById("volume");
 backgroundMusic.volume = 0.5; // Define o volume inicial em 50%
