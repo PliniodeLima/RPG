@@ -6,7 +6,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   
     if (playerName && playerClass) {
       // Salva os dados do jogador no localStorage
-      localStorage.setItem('playerName', playerName);
+      localStorage.setItem('playerName',playerName);
       localStorage.setItem('playerClass', playerClass);
       // Redireciona para o index.html
       window.location.href = 'game.html';
